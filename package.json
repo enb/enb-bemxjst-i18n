@@ -31,7 +31,6 @@
   "dependencies": {
     "enb-bem-i18n": "1.0.0-beta4",
     "enb-bemxjst": "2.0.0-beta4",
-    "serialize-javascript": "1.0.0",
     "vow": "0.4.10"
   },
   "devDependencies": {
@@ -44,7 +43,8 @@
     "mock-enb": "0.1.0",
     "mock-fs": "3.0.0",
     "mock-require": "1.1.0",
-    "must": "0.12.0"
+    "must": "0.12.0",
+    "serialize-javascript": "1.0.0"
   },
   "scripts": {
     "test": "npm run lint && npm run unit",
