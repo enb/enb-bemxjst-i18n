@@ -1,6 +1,5 @@
 enb-bemxjst-i18n
 ============
-https://img.shields.io/travis/enb-bem/enb-bh/master.svg?style=flat&label=tests
 
 [![NPM version](https://img.shields.io/npm/v/enb-bemxjst-i18n.svg?style=flat)](https://www.npmjs.org/package/enb-bemxjst-i18n)
 [![Build Status](https://img.shields.io/travis/enb-bem/enb-bemxjst-i18n/master.svg?style=flat&label=tests)](https://travis-ci.org/enb-bem/enb-bemxjst-i18n)
