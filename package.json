@@ -2,7 +2,7 @@
   "author": "Andrew Abramov <andrewblond@yandex.com>",
   "description": "BEM.I18N localization for BEMXJST templates",
   "name": "enb-bemxjst-i18n",
-  "version": "0.0.1",
+  "version": "1.0.0-beta1",
   "repository": "git://github.com/enb-bem/enb-bemxjst-i18n",
   "homepage": "https://github.com/enb-bem/enb-bemxjst-i18n",
   "bugs": "https://github.com/enb-bem/enb-bemxjst-i18n/issues",
