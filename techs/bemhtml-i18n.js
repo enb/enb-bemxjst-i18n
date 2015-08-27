@@ -119,7 +119,7 @@ module.exports = require('enb-bemxjst/techs/bemhtml').buildFlow()
                         };
 
                     return compileI18N(parsed.core, parsed.keysets, opts);
-                });
+                }, this);
         },
         /**
          * Reads file with keysets.

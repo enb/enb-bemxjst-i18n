@@ -60,6 +60,26 @@ describe('bemhtml-i18n for bem-bl', function () {
             });
     });
 
+    it('must return lang', function () {
+        var keysets = {
+            all: {
+                '': core
+            },
+            scope: {
+                key: 'val'
+            }
+        };
+
+        return build(keysets)
+            .then(function (exports) {
+                var BEMHTML = exports.BEMHTML,
+                    bemjson = { block: 'lang' },
+                    html = BEMHTML.apply(bemjson);
+
+                html.must.be('<div class=\"lang\">lang</div>');
+            });
+    });
+
     it('must return value', function () {
         var keysets = {
             all: {
@@ -258,6 +278,11 @@ function build(keysets) {
                 'block("block").content()(function () {',
                 '    var ctx = this.ctx;',
                 '    return this.i18n(ctx.scope, ctx.key, ctx.params);',
+                '});'
+            ].join(EOL),
+            'lang.bemhtml': [
+                'block("lang").content()(function () {',
+                '    return this.i18n.lang();',
                 '});'
             ].join(EOL)
         },
