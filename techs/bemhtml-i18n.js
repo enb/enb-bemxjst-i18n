@@ -35,7 +35,7 @@ var EOL = require('os').EOL,
  * var BemhtmlI18nTech = require('enb-bemxjst-i18n/techs/bemhtml-i18n'),
  *     KeysetsTech = require('enb-bem-i18n/techs/keysets'),
  *     FileProvideTech = require('enb/techs/file-provider'),
- *     bem = require('enb-bem-techs');
+ *     bemTechs = require('enb-bem-techs');
  *
  * module.exports = function(config) {
  *     config.setLanguages(['en', 'ru']);
@@ -44,9 +44,9 @@ var EOL = require('os').EOL,
  *         // get FileList
  *         node.addTechs([
  *             [FileProvideTech, { target: '?.bemdecl.js' }],
- *             [bem.levels, levels: ['blocks']],
- *             bem.deps,
- *             bem.files
+ *             [bemTechs.levels, { levels: ['blocks'] }],
+ *             [bemTechs.deps],
+ *             [bemTechs.files]
  *         ]);
  *
  *         // collect and merge keysets files into bundle
