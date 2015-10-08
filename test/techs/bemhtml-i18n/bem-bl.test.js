@@ -5,7 +5,8 @@ var EOL = require('os').EOL,
     serializeJS = require('serialize-javascript'),
     MockNode = require('mock-enb/lib/mock-node'),
     FileList = require('enb/lib/file-list'),
-    dropRequireCache = require('enb/lib/fs/drop-require-cache'),
+    loadDirSync = require('mock-enb/utils/dir-utils').loadDirSync,
+    clearRequire = require('clear-require'),
     Tech = require('../../../techs/bemhtml-i18n'),
     bemhtmlContents,
     core;
@@ -158,7 +159,7 @@ describe('bemhtml-i18n for bem-bl', function () {
                 cacheKey = 'keysets-file-' + relPath,
                 filename = path.resolve(relPath);
 
-            dropRequireCache(require, filename);
+            clearRequire(filename);
             require(filename);
             cache.cacheFileInfo(cacheKey, filename);
 
@@ -185,7 +186,7 @@ describe('bemhtml-i18n for bem-bl', function () {
 
             var fileList = new FileList();
 
-            fileList.loadFromDirSync('blocks');
+            fileList.addFiles(loadDirSync('blocks'));
 
             bundle.provideTechData('?.files', fileList);
 
@@ -223,7 +224,7 @@ describe('bemhtml-i18n for bem-bl', function () {
                 cacheKey = 'keysets-file-' + relPath,
                 filename = path.resolve(relPath);
 
-            dropRequireCache(require, filename);
+            clearRequire(filename);
             require(filename);
             cache.cacheFileInfo(cacheKey, filename);
 
@@ -250,7 +251,7 @@ describe('bemhtml-i18n for bem-bl', function () {
 
             var fileList = new FileList();
 
-            fileList.loadFromDirSync('blocks');
+            fileList.addFiles(loadDirSync('blocks'));
 
             bundle.provideTechData('?.files', fileList);
 
@@ -294,7 +295,7 @@ function build(keysets) {
     var bundle = new MockNode('bundle'),
         fileList = new FileList();
 
-    fileList.loadFromDirSync('blocks');
+    fileList.addFiles(loadDirSync('blocks'));
 
     bundle.provideTechData('?.files', fileList);
 
