@@ -2,7 +2,6 @@
     "name": "enb-bemxjst-i18n-fixtures",
     "private": true,
     "dependencies": {
-        "bem-core": "2.6.0",
-        "bem-core-v3": "git://github.com/bem/bem-core.git#issues/576@v3"
+        "bem-core": "2.8.0"
     }
 }

@@ -7,7 +7,7 @@ var path = require('path'),
     loadDirSync = require('mock-enb/utils/dir-utils').loadDirSync,
     clearRequire = require('clear-require'),
     Tech = require('../../../techs/bemhtml-i18n'),
-    core = require('../../fixtures/bem-core-v3/common.blocks/i18n/i18n.i18n.js').i18n.i18n,
+    core = require('../../fixtures/bem-core/common.blocks/i18n/i18n.i18n.js').i18n.i18n,
     bemhtmlContents;
 
 describe('bemhtml-i18n for bem-core', function () {

@@ -1,4 +1,4 @@
-test/**/*.test.js
+test/techs/**/*.test.js
 --ui bdd
 --reporter dot
 --require must
