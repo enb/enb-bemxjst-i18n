@@ -83,7 +83,7 @@ module.exports = require('enb-bemxjst/techs/bemhtml').buildFlow()
                 ].join(EOL)
             });
 
-            return this._compileBEMXJST(sources);
+            return this._compileBEMXJST(sources, 'bemhtml');
         }, this);
     })
     .methods({
