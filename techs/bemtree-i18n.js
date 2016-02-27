@@ -83,7 +83,7 @@ module.exports = require('enb-bemxjst/techs/bemtree').buildFlow()
                 ].join(EOL)
             });
 
-            return this._compileBEMXJST(sources, 'bemtree');
+            return this._compileBEMTREE(sources);
         }, this);
     })
     .methods({
