@@ -3,13 +3,13 @@
   "description": "BEM.I18N localization for BEMXJST templates",
   "name": "enb-bemxjst-i18n",
   "version": "1.0.0-beta3",
-  "repository": "git://github.com/enb-bem/enb-bemxjst-i18n",
-  "homepage": "https://github.com/enb-bem/enb-bemxjst-i18n",
-  "bugs": "https://github.com/enb-bem/enb-bemxjst-i18n/issues",
+  "repository": "git://github.com/enb/enb-bemxjst-i18n",
+  "homepage": "https://github.com/enb/enb-bemxjst-i18n",
+  "bugs": "https://github.com/enb/enb-bemxjst-i18n/issues",
   "licenses": [
     {
       "type": "MPL-2.0",
-      "url": "https://github.com/enb-bem/enb-bemxjst-i18n/blob/master/LICENSE.txt"
+      "url": "https://github.com/enb/enb-bemxjst-i18n/blob/master/LICENSE.txt"
     }
   ],
   "contributors": [

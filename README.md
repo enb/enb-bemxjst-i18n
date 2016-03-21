@@ -2,10 +2,10 @@ enb-bemxjst-i18n
 ============
 
 [![NPM version](https://img.shields.io/npm/v/enb-bemxjst-i18n.svg?style=flat)](https://www.npmjs.org/package/enb-bemxjst-i18n)
-[![Build Status](https://img.shields.io/travis/enb-bem/enb-bemxjst-i18n/master.svg?style=flat&label=tests)](https://travis-ci.org/enb-bem/enb-bemxjst-i18n)
+[![Build Status](https://img.shields.io/travis/enb/enb-bemxjst-i18n/master.svg?style=flat&label=tests)](https://travis-ci.org/enb/enb-bemxjst-i18n)
 [![Build status](https://img.shields.io/appveyor/ci/blond/enb-bemxjst-i18n.svg?style=flat&label=windows)](https://ci.appveyor.com/project/blond/enb-bemxjst-i18n)
-[![Coverage Status](https://img.shields.io/coveralls/enb-bem/enb-bemxjst-i18n.svg?style=flat)](https://coveralls.io/r/enb-bem/enb-bemxjst-i18n?branch=master)
-[![devDependency Status](https://img.shields.io/david/enb-bem/enb-bemxjst-i18n.svg?style=flat)](https://david-dm.org/enb-bem/enb-bemxjst-i18n)
+[![Coverage Status](https://img.shields.io/coveralls/enb/enb-bemxjst-i18n.svg?style=flat)](https://coveralls.io/r/enb/enb-bemxjst-i18n?branch=master)
+[![devDependency Status](https://img.shields.io/david/enb/enb-bemxjst-i18n.svg?style=flat)](https://david-dm.org/enb/enb-bemxjst-i18n)
 
 Поддержка `BEM.I18N` для ENB.
 
