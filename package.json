@@ -31,7 +31,7 @@
   "dependencies": {
     "clear-require": "1.0.1",
     "enb-bem-i18n": "1.1.0",
-    "enb-bemxjst": "^5.0.0",
+    "enb-bemxjst": "^6.2.1",
     "vow": "0.4.11"
   },
   "devDependencies": {
