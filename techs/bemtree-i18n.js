@@ -8,21 +8,21 @@ var EOL = require('os').EOL,
  * @augments {BemhtmlTech}
  * @classdesc
  *
- * Compiles localized BEMHTML template files with BEMXJST translator and merges them into a single BEMHTML bundle.
+ * Compiles localized BEMTREE template files with BEMXJST translator and merges them into a single BEMTREE bundle.
  *
  * Localization is based on pre-built `?.keysets.{lang}.js` bundle files.
  *
- * Important: It supports only JS syntax by default. Use `compat` option to support old BEMHTML syntax.
+ * Important: It supports only JS syntax by default. Use `compat` option to support old BEMTREE syntax.
  *
  * @param {Object}    options                                      Options
- * @param {String}    [options.target='?.bemhtml.{lang}.js']       Path to a target with compiled file.
- * @param {String}    [options.filesTarget='?.files']              Path to a target with BEMHTML FileList.
- * @param {String[]}  [options.sourceSuffixes]                     Files with specified BEMHTML suffixes
+ * @param {String}    [options.target='?.bemtree.{lang}.js']       Path to a target with compiled file.
+ * @param {String}    [options.filesTarget='?.files']              Path to a target with BEMTREE FileList.
+ * @param {String[]}  [options.sourceSuffixes]                     Files with specified BEMTREE suffixes
  *                                                                 involved in the assembly.
  * @param {String}    options.lang                                 Language identifier.
  * @param {String}    [options.keysetsFile='?.keysets.{lang}.js']  Path to a source keysets file.
- * @param {String}    [options.exportName='BEMHTML']               Name of BEMHTML template variable.
- * @param {Boolean}   [options.compat=false]                       Sets `compat` option to support old BEMHTML syntax.
+ * @param {String}    [options.exportName='BEMTREE']               Name of BEMTREE template variable.
+ * @param {Boolean}   [options.compat=false]                       Sets `compat` option to support old BEMTREE syntax.
  * @param {Boolean}   [options.devMode=true]                       Sets `devMode` option for convenient debugging.
  *                                                                 If `devMode` is set to true, code of templates will
  *                                                                 not be compiled but only wrapped for development
@@ -32,7 +32,7 @@ var EOL = require('os').EOL,
  *                                                                 code of templates.
  *
  * @example
- * var BemhtmlI18nTech = require('enb-bemxjst-i18n/techs/bemhtml-i18n'),
+ * var BemhtmlI18nTech = require('enb-bemxjst-i18n/techs/bemtree-i18n'),
  *     KeysetsTech = require('enb-bem-i18n/techs/keysets'),
  *     FileProvideTech = require('enb/techs/file-provider'),
  *     bemTechs = require('enb-bem-techs');
@@ -52,29 +52,29 @@ var EOL = require('os').EOL,
  *         // collect and merge keysets files into bundle
  *         node.addTech([KeysetsTech, { lang: '{lang}' }]);
  *
- *         // build localized BEMHTML file for each lang
+ *         // build localized BEMTREE file for each lang
  *         node.addTech([BemhtmlI18nTech, { lang: '{lang}' }]);
- *         node.addTarget('?.bemhtml.{lang}.js');
+ *         node.addTarget('?.bemtree.{lang}.js');
  *     });
  * };
  */
-module.exports = require('enb-bemxjst/techs/bemhtml').buildFlow()
-    .name('bemhtml-i18n')
-    .target('target', '?.bemhtml.{lang}.js')
+module.exports = require('enb-bemxjst/techs/bemtree').buildFlow()
+    .name('bemtree-i18n')
+    .target('target', '?.bemtree.{lang}.js')
     .defineRequiredOption('lang')
     .useSourceFilename('keysetsFile', '?.keysets.{lang}.js')
     .builder(function (fileList, keysetsFilename) {
         // don't add fat wrapper code of bem-xjst
         if (fileList.length === 0) {
-            return this._mockBEMHTML();
+            return this._mockBEMTREE();
         }
 
         return vow.all([
-            this._getBEMHTMLSources(fileList),
+            this._getBEMTREESources(fileList),
             this._compileI18N(keysetsFilename)
-        ]).spread(function (BEMHTMLSources, I18NCode) {
+        ]).spread(function (BEMTREESources, I18NCode) {
             // i18n will be available in templates by `this.i18n`
-            var sources = BEMHTMLSources.concat({
+            var sources = BEMTREESources.concat({
                 contents: [
                     'oninit(function(exports, context) {',
                     '    var BEMContext = exports.BEMContext || context.BEMContext;',
@@ -83,18 +83,18 @@ module.exports = require('enb-bemxjst/techs/bemhtml').buildFlow()
                 ].join(EOL)
             });
 
-            return this._compileBEMHTML(sources);
+            return this._compileBEMTREE(sources);
         }, this);
     })
     .methods({
         /**
-         * Reads source code of BEMHTML templates and processes.
+         * Reads source code of BEMTREE templates and processes.
          *
          * @param {FileList} fileList — objects that contain file information.
          * @returns {Promise}
          * @private
          */
-        _getBEMHTMLSources: function (fileList) {
+        _getBEMTREESources: function (fileList) {
             var filenames = this._getUniqueFilenames(fileList);
 
             return this._readFiles(filenames)
